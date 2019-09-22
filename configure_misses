@@ -1,0 +1,6 @@
+Configure miss: x86_64-generic-linux-gnu-glib-compile-resources
+Configure miss: x86_64-generic-linux-gnu-xmllint
+Configure miss: x86_64-generic-linux-gnu-inkscape
+Configure miss: x86_64-generic-linux-gnu-sassc
+Configure miss: x86_64-generic-linux-gnu-parallel
+Configure miss: Mate Gtk theming support

@@ -1,0 +1,3 @@
+--disable-cinnamon
+--disable-mate
+--enable-parallel
