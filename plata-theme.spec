@@ -4,13 +4,14 @@
 #
 Name     : plata-theme
 Version  : 0.8.91
-Release  : 1
+Release  : 2
 URL      : https://gitlab.com/tista500/plata-theme/-/archive/0.8.91/plata-theme-0.8.91.tar.gz
 Source0  : https://gitlab.com/tista500/plata-theme/-/archive/0.8.91/plata-theme-0.8.91.tar.gz
-Summary  : No detailed summary available
+Summary  : A Gtk+ theme based on Material Design Refresh
 Group    : Development/Tools
-License  : GPL-2.0
+License  : CC-BY-SA-4.0 GPL-2.0
 Requires: plata-theme-data = %{version}-%{release}
+Requires: plata-theme-license = %{version}-%{release}
 BuildRequires : glib
 BuildRequires : inkscape
 BuildRequires : libxml2-dev
@@ -22,10 +23,9 @@ BuildRequires : sassc
 %description
 Summary
 -------
-* Do not edit the CSS directly, edit the source SCSS files and process
-them with SASS (running `make` should do that when you have the required
-software installed, as described below; run `/.parse-sass.sh` manually
-if it doesn't).
+* Do not edit the CSS directly, edit the source SCSS files and process them
+with SASS (run `./parse-sass.sh` when you have the required software
+installed, as described below).
 
 %package data
 Summary: data components for the plata-theme package.
@@ -33,6 +33,14 @@ Group: Data
 
 %description data
 data components for the plata-theme package.
+
+
+%package license
+Summary: license components for the plata-theme package.
+Group: Default
+
+%description license
+license components for the plata-theme package.
 
 
 %prep
@@ -43,7 +51,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569180400
+export SOURCE_DATE_EPOCH=1569269775
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -65,8 +73,11 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1569180400
+export SOURCE_DATE_EPOCH=1569269775
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/plata-theme
+cp COPYING %{buildroot}/usr/share/package-licenses/plata-theme/COPYING
+cp LICENSE_CC_BY_SA4 %{buildroot}/usr/share/package-licenses/plata-theme/LICENSE_CC_BY_SA4
 %make_install
 
 %files
@@ -2072,3 +2083,8 @@ rm -rf %{buildroot}
 /usr/share/themes/Plata/xfwm4/top-right-active-shaded.png
 /usr/share/themes/Plata/xfwm4/top-right-active.png
 /usr/share/themes/Plata/xfwm4/top-right-inactive.png
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/plata-theme/COPYING
+/usr/share/package-licenses/plata-theme/LICENSE_CC_BY_SA4
