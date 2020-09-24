@@ -4,7 +4,7 @@
 #
 Name     : plata-theme
 Version  : 0.8.91
-Release  : 2
+Release  : 3
 URL      : https://gitlab.com/tista500/plata-theme/-/archive/0.8.91/plata-theme-0.8.91.tar.gz
 Source0  : https://gitlab.com/tista500/plata-theme/-/archive/0.8.91/plata-theme-0.8.91.tar.gz
 Summary  : A Gtk+ theme based on Material Design Refresh
